@@ -32,37 +32,37 @@ const Update = () => {
   };
   console.log(id);
   return (
-    <Form className="form-class" onSubmit={updateAPIData}>
-      <Form.Field>
-        <label className="control-label">First Name</label>
-        <Input
-          className="inputClass"
+    <form className="form-class" onSubmit={updateAPIData}>
+      <div className="form-group mt-3">
+        <input
+          className="form-control"
           placeholder="First Name"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
         />
-      </Form.Field>
-      <Form.Field>
-        <label className="control-label">Last Name</label>
-        <Input
-          className="inputClass"
+      </div>
+      <div className="form-group mt-3">
+        <input
+          className="form-control"
           placeholder="Last Name"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
         />
-      </Form.Field>
-      <Form.Field>
-        <label className="control-label">Email</label>
-        <Input
-          className="inputClass"
+      </div>
+      <div className="form-group mt-3">
+        <input
+          className="form-control"
           placeholder="Email"
+          type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-      </Form.Field>
+      </div>
 
-      <Button type="submit">Submit</Button>
-    </Form>
+      <button type="submit" className="btn btn-outline-primary mt-3">
+        Submit
+      </button>
+    </form>
   );
 };
 

@@ -7,6 +7,7 @@ export const Container = styled.div`
   }
   .inputClass {
     height: 50px;
+    margin-top: 1rem;
   }
   padding-left: 20px;
   padding-right: 20px;

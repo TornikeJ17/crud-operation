@@ -32,35 +32,34 @@ const Create = () => {
   };
   return (
     <Container>
-      <Form className="form-class" onSubmit={postData}>
-        <Form.Field>
-          <label className="control-label">First Name</label>
-          <Input
-            className="inputClass"
+      <form className="form-class" onSubmit={postData}>
+        <div className="form-group mt-3">
+          <input
+            className="form-control"
             placeholder="First Name"
             onChange={(e) => setFirstName(e.target.value)}
           />
-        </Form.Field>
-        <Form.Field>
-          <label className="control-label">Last Name</label>
-          <Input
-            className="inputClass"
+        </div>
+        <div className="form-group mt-3">
+          <input
+            className="form-control"
             placeholder="Last Name"
             onChange={(e) => setLastName(e.target.value)}
           />
-        </Form.Field>
-        <Form.Field>
-          <label className="control-label">Email</label>
-          <Input
-            className="inputClass"
+        </div>
+        <div className="form-group mt-3">
+          <input
+            className="form-control"
             placeholder="Email"
             type="email"
             onChange={(e) => setEmail(e.target.value)}
           />
-        </Form.Field>
+        </div>
 
-        <Button type="submit">Submit</Button>
-      </Form>
+        <button type="submit" className="btn btn-outline-primary mt-3">
+          Submit
+        </button>
+      </form>
     </Container>
   );
 };

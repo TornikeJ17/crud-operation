@@ -1,7 +1,6 @@
-import { Container, BlockItem, Title, SeccondTitle } from "./Styled";
+import { Container, Table, Tbody, Thead, SeccondTitle } from "./Styled";
 import { Link } from "react-router-dom";
 import React, { useEffect } from "react";
-import { Table, Button } from "semantic-ui-react";
 import axios from "axios";
 import { CgChevronLeft } from "react-icons/cg";
 import { API } from "../api/api";
@@ -40,35 +39,47 @@ const Read = ({ data, setData }) => {
       <Link to={"/"}>
         <CgChevronLeft size="2em" />
       </Link>
-      <Table striped>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell>First Name</Table.HeaderCell>
-            <Table.HeaderCell>Last Name</Table.HeaderCell>
-            <Table.HeaderCell>E-mail</Table.HeaderCell>
-            <Table.HeaderCell>Update</Table.HeaderCell>
-            <Table.HeaderCell>Delete</Table.HeaderCell>
-          </Table.Row>
-        </Table.Header>
 
-        <Table.Body>
-          {data?.map((item, index) => (
-            <Table.Row key={index}>
-              <Table.Cell>{item.firstName}</Table.Cell>
-              <Table.Cell>{item.lastName}</Table.Cell>
-              <Table.Cell>{item.email}</Table.Cell>
-              <Table.Cell>
-                <Link to={"/update"}>
-                  <Button onClick={() => updateData(item)}>Update</Button>
-                </Link>
-              </Table.Cell>
-              <Table.Cell>
-                <Button onClick={() => deleteData(item.id)}>Delete</Button>
-              </Table.Cell>
-            </Table.Row>
-          ))}
-        </Table.Body>
-      </Table>
+      <div className="table-responsive tableBox">
+        <table className="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Update</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody className="table-group-divider">
+            {data?.map((item, index) => (
+              <tr key={index}>
+                <td>{item.firstName}</td>
+                <td>{item.lastName}</td>
+                <td>{item.email}</td>
+                <td>
+                  <Link to={"/update"}>
+                    <button
+                      className="btn btn-outline-secondary"
+                      onClick={() => updateData(item)}
+                    >
+                      Update
+                    </button>
+                  </Link>
+                </td>
+                <td>
+                  <button
+                    className="btn btn-outline-danger"
+                    onClick={() => deleteData(item.id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </Container>
   );
 };
