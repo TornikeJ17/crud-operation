@@ -25,7 +25,6 @@ const Read = ({ data, setData }) => {
     localStorage.setItem("Email", email);
   };
   const deleteData = (id) => {
-    console.log(id);
     axios
       .delete(
         `https://62989076de3d7eea3c6ab55d.mockapi.io/todoAPI/v1/inbox/${id}`

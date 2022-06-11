@@ -5,9 +5,9 @@ import { useNavigate } from "react-router-dom";
 
 const Update = () => {
   const [id, setID] = useState(null);
-  const [firstName, setFirstName] = useState();
-  const [lastName, setLastName] = useState();
-  const [email, setEmail] = useState();
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -30,9 +30,8 @@ const Update = () => {
         navigate("/read");
       });
   };
-  console.log(id);
   return (
-    <form className="form-class" onSubmit={updateAPIData}>
+    <Form className="form-class" onSubmit={updateAPIData}>
       <div className="form-group mt-3">
         <input
           className="form-control"
@@ -62,7 +61,7 @@ const Update = () => {
       <button type="submit" className="btn btn-outline-primary mt-3">
         Submit
       </button>
-    </form>
+    </Form>
   );
 };
 
